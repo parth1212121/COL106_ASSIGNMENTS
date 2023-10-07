@@ -1,0 +1,2 @@
+If you are using c++, DO NOT use the delete keyword to free up heap space by actually deleting the nodes.
+It seems that the judge access the tree nodes after your program has finished running. Thus in a testcase like this [10,5,10] 21 when you will have to delete the whole tree and return nullptr it will give a address sanitizer error as the judge will try to access the original root node. Thus simply return nullptr everytime you have to delete nodes and leave the judge to actually free up the nodes.
