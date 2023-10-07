@@ -1,0 +1,40 @@
+#pragma once 
+
+/* PART B */
+/* Stacks using Linked Lists */
+
+class Node {
+private: 
+    int value;
+    bool is_sentinel;
+
+public: 
+    Node* next;
+    Node* prev;
+
+    // Use to construct a sentinel node (see list.h)
+    Node(bool sentinel=true){
+        is_sentinel=true;
+        next=nullptr;
+        prev=nullptr;
+    };
+
+    // Use to construct a regular node
+    Node(int v, Node* nxt=nullptr, Node* prv=nullptr){
+        value=v;
+        is_sentinel=false;
+        next=nullptr;
+        prev=nullptr;
+    };
+
+    // Return whether a node is a sentinel node 
+    // Use it to check if we are at the ends of a list
+    bool is_sentinel_node(){
+        return is_sentinel;
+    };
+
+    // Return the value of a node
+    int get_value(){
+        return value;
+    };
+};
